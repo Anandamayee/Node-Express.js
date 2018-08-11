@@ -8,6 +8,8 @@ hbs.registerPartials(__dirname + '/views/partials')
 //medile ware for static path __dirname = project path 
 //medile ware executes in order its called
 
+const port=process.env.PORT || 4200;
+
 app.set('view engine', 'hbs');
 
 app.use((req, res, next) => {
@@ -57,7 +59,7 @@ app.get('/bad', (request, response) => {
 
 
 
-app.listen(4200, () => {
-    console.log("server is up");
+app.listen(port, () => {
+    console.log(`server is up ${port}`);
 });
 
